@@ -1,6 +1,7 @@
-import { Controller, Post, Body, Get, Param } from '@nestjs/common';
+import { Controller, Post, Body, Get, Param, UsePipes } from '@nestjs/common';
 import { PostsService } from './posts.service';
 import { CreatePostDto } from './dto/create-post.dto';
+import { ValidationPipe } from '../../shared/validation.pipe';
 
 @Controller('posts')
 export class PostsController {
@@ -10,6 +11,7 @@ export class PostsController {
   ) {}
 
   @Post()
+  @UsePipes(new ValidationPipe())
   async store(@Body() createPostDto: CreatePostDto) {
     return this.postService.store(createPostDto);
   }
