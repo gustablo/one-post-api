@@ -9,8 +9,8 @@ export const databaseProviders = [
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,
-        user: 'gustavo_penero',
-        pass: 'gPinheir0',
+        user: process.env.MONGODB_USER,
+        pass: process.env.MONGODB_PASS,
       }),
 
   },

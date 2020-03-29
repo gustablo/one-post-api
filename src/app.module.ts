@@ -5,10 +5,11 @@ import { DatabaseModule } from './database/database.module';
 import { CatsModule } from './core/cats/cats.module';
 import { PostsModule } from './core/posts/posts.module';
 import { ParagraphsModule } from './core/paragraphs/paragraphs.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [DatabaseModule, CatsModule, PostsModule, ParagraphsModule],
+  imports: [ConfigModule.forRoot(), DatabaseModule, CatsModule, PostsModule, ParagraphsModule],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule { }

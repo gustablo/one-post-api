@@ -20,4 +20,8 @@ export class PostsService {
     return this.postModel.find().exec();
   }
 
+  async show(id: string): Promise<Post> {
+    return this.postModel.findById(id);
+  }
+
 }
