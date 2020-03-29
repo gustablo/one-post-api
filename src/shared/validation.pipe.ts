@@ -28,13 +28,33 @@ export class ValidationPipe implements PipeTransform<any> {
   private joinErrors(errors: ValidationError[]) {
 
     return errors.map(err => {
+      if (err.constraints) {
+        const keys = Object.keys(err.constraints);
 
-      const keys = Object.keys(err.constraints);
+        for (const key of keys) {
+          return err.constraints[key];
+        }
+      }
+      if (err.children) {
 
-      for (const key of keys) {
-        return err.constraints[key];
+        const constraints = this.findDeepChildrens(err);
+
+        const keys = Object.keys(constraints);
+
+        for (const key of keys) {
+          return constraints[key];
+        }
       }
 
     });
+  }
+
+  private findDeepChildrens(error) {
+
+    if (!error.children.length) {
+      return error.constraints;
+    }
+
+    return this.findDeepChildrens(error.children[0]);
   }
 }
