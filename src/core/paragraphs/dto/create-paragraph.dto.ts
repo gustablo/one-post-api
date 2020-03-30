@@ -3,12 +3,12 @@ import { ApiProperty } from '@nestjs/swagger';
 
 export class CreateParagraphDto {
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
   @IsString()
   @IsOptional()
   text?: string;
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
   @IsString()
   @IsOptional()
   img?: string;
