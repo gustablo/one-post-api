@@ -25,7 +25,7 @@ export class PostsController {
   }
 
   @ApiParam({ name: 'id', type: String })
-  @Get('id')
+  @Get(':id')
   async show(@Param('id') id: string) {
     return this.postService.show(id);
   }
