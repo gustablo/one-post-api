@@ -1,4 +1,4 @@
-import { CreateParagraphDto } from 'src/core/paragraphs/dto/create-paragraph.dto';
+import { CreateParagraphDto } from '../../paragraphs/dto/create-paragraph.dto';
 import { IsString, IsArray, ValidateNested } from 'class-validator';
 import { Type } from 'class-transformer';
 import { ApiProperty } from '@nestjs/swagger';
