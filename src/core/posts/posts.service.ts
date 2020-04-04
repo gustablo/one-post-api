@@ -24,4 +24,17 @@ export class PostsService {
     return this.postModel.findById(id);
   }
 
+  async patchLike(id: string): Promise<number> {
+    const post = await this.postModel.findById(id);
+
+    const lastTotalLikes: number = post.get('likes');
+    const newTotalLikes = lastTotalLikes + 1;
+
+    post.set('likes', newTotalLikes);
+
+    await post.save();
+
+    return post.get('likes') as number;
+  }
+
 }

@@ -1,5 +1,6 @@
 import * as mongoose from 'mongoose';
 import { ParagraphSchema } from './paragraph.schema';
+import { CategorySchema } from './category.schema';
 
 export const PostSchema = new mongoose.Schema({
 
@@ -8,6 +9,16 @@ export const PostSchema = new mongoose.Schema({
   createdAt: {
     type: Date,
     default: Date.now(),
+  },
+
+  categories: [{
+    type: CategorySchema,
+    ref: 'Category',
+  }],
+
+  likes: {
+    type: Number,
+    default: 0,
   },
 
   paragraphs: [{

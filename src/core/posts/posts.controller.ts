@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Get, Param, UsePipes } from '@nestjs/common';
+import { Controller, Post, Body, Get, Param, UsePipes, Patch } from '@nestjs/common';
 import { PostsService } from './posts.service';
 import { CreatePostDto } from './dto/create-post.dto';
 import { ValidationPipe } from '../../shared/validation.pipe';
@@ -28,5 +28,10 @@ export class PostsController {
   @Get(':id')
   async show(@Param('id') id: string) {
     return this.postService.show(id);
+  }
+
+  @Patch(':id/likes')
+  async patchLike(@Param('id') id: string) {
+    return this.postService.patchLike(id);
   }
 }
