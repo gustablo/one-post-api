@@ -3,6 +3,7 @@ import { Model } from 'mongoose';
 import { Post } from '../../interfaces/post.interface';
 import { CreatePostDto } from './dto/create-post.dto';
 import { Category } from 'src/interfaces/category.interface';
+import { CreateCategoryDto } from '../categories/dto/category-create.dto';
 
 @Injectable()
 export class PostsService {
@@ -15,8 +16,15 @@ export class PostsService {
   async store(createPostDto: CreatePostDto): Promise<Post> {
     const createdPost = new this.postModel(createPostDto);
 
-    for (const category of createdPost.categories) {
-      const categoryExists = this.categoryModel.findOne({ name: category.name });
+    await this.storeCategories(createPostDto.categories);
+
+    return createdPost.save();
+  }
+
+  async storeCategories(categories: CreateCategoryDto[]) {
+
+    for (const category of categories) {
+      const categoryExists = await this.categoryModel.findOne({ name: category.name });
 
       if (!categoryExists) {
         const createdCategory = new this.categoryModel(category);
@@ -25,7 +33,6 @@ export class PostsService {
 
     }
 
-    return createdPost.save();
   }
 
   async index(): Promise<Post[]> {
