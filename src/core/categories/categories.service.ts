@@ -18,8 +18,9 @@ export class CategoriesService {
   async showPosts(id: string) {
     const category = await this.categoryModel.findById(id);
 
-    return await this.postModel.findOne({ categories:  { $elemMatch: { _id: category.id } } });
-    return null;
+    const postsByCategoryId = await this.postModel.find({ categories:  { $elemMatch: { name: category.name } } });
+
+    return postsByCategoryId;
   }
 
 }

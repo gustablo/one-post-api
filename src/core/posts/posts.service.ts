@@ -16,16 +16,20 @@ export class PostsService {
     const createdPost = new this.postModel(createPostDto);
 
     for (const category of createdPost.categories) {
-      const createdCategory = new this.categoryModel(category);
+      const categoryExists = this.categoryModel.findOne({ name: category.name });
 
-      await createdCategory.save();
+      if (!categoryExists) {
+        const createdCategory = new this.categoryModel(category);
+        await createdCategory.save();
+      }
+
     }
 
     return createdPost.save();
   }
 
   async index(): Promise<Post[]> {
-    return this.postModel.find().exec();
+    return this.postModel.find().sort({ _id: -1 }).exec();
   }
 
   async show(id: string): Promise<Post> {

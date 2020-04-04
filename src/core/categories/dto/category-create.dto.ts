@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsString, IsEnum, IsNotEmpty, IsIn } from 'class-validator';
+import { IsString, IsEnum, IsNotEmpty } from 'class-validator';
 import { CategoriesEnum } from '../../../enums/categories.enum';
 
 export class CategoryCreateDTO {
