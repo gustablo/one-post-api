@@ -1,7 +1,7 @@
 export enum CategoriesEnum {
 
-  JAVASCRIPT = 'JS',
-  NODE_JS = 'NodeJS',
+  JAVASCRIPT = 'JAVASCRIPT',
+  NODE_JS = 'NODE_JS',
   PHP = 'PHP',
 
 }

@@ -2,16 +2,24 @@ import { Injectable, Inject } from '@nestjs/common';
 import { Model } from 'mongoose';
 import { Post } from '../../interfaces/post.interface';
 import { CreatePostDto } from './dto/create-post.dto';
+import { Category } from 'src/interfaces/category.interface';
 
 @Injectable()
 export class PostsService {
 
   constructor(
     @Inject('POST_MODEL') private postModel: Model<Post>,
+    @Inject('CATEGORY_MODEL') private categoryModel: Model<Category>,
   ) {}
 
   async store(createPostDto: CreatePostDto): Promise<Post> {
     const createdPost = new this.postModel(createPostDto);
+
+    for (const category of createdPost.categories) {
+      const createdCategory = new this.categoryModel(category);
+
+      await createdCategory.save();
+    }
 
     return createdPost.save();
   }

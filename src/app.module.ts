@@ -6,9 +6,10 @@ import { CatsModule } from './core/cats/cats.module';
 import { PostsModule } from './core/posts/posts.module';
 import { ParagraphsModule } from './core/paragraphs/paragraphs.module';
 import { ConfigModule } from '@nestjs/config';
+import { CategoriesModule } from './core/categories/categories.module';
 
 @Module({
-  imports: [ConfigModule.forRoot(), DatabaseModule, CatsModule, PostsModule, ParagraphsModule],
+  imports: [ConfigModule.forRoot(), DatabaseModule, CatsModule, PostsModule, ParagraphsModule, CategoriesModule],
   controllers: [AppController],
   providers: [AppService],
 })
