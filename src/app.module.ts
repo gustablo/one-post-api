@@ -9,6 +9,7 @@ import { ConfigModule } from '@nestjs/config';
 import { CategoriesModule } from './core/categories/categories.module';
 import { UsersModule } from './core/users/users.module';
 import { CommentsModule } from './core/comments/comments.module';
+
 @Module({
   imports: [ConfigModule.forRoot(), DatabaseModule, CatsModule, PostsModule, ParagraphsModule, CategoriesModule, UsersModule, CommentsModule],
   controllers: [AppController],

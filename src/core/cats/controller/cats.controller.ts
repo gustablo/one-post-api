@@ -1,7 +1,7 @@
-import { Controller, Get, Body, Req, Post } from '@nestjs/common';
+import { Controller, Get, Body, Req, Post, Param, BadRequestException, HttpStatus } from '@nestjs/common';
 import { CatsService } from '../service/cats.service';
 import { CreateCatDto } from '../dtos/create-cat.dto';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiTags, ApiBearerAuth } from '@nestjs/swagger';
 
 @ApiTags('cats')
 @Controller('cats')
@@ -12,6 +12,7 @@ export class CatsController {
   ) { }
 
   @Get()
+  @ApiBearerAuth()
   async index() {
     return this.catsService.index();
   }

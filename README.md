@@ -22,7 +22,7 @@ $ npm run start:prod
 ```
 
 ## Documentation
-[documentation](localhost:3000/api) 
+[documentation](https://one-post-api.herokuapp.com/api/) 
 
 ## Create entity
 ```bash

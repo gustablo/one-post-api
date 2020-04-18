@@ -51,9 +51,7 @@ export class ValidationPipe implements PipeTransform<any> {
 
   private findDeepChildrens(error) {
 
-    if (!error.children.length) {
-      return error.constraints;
-    }
+    if (!error.children.length) return error.constraints;
 
     return this.findDeepChildrens(error.children[0]);
   }

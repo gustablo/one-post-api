@@ -1,4 +1,4 @@
-import { Module, MiddlewareConsumer } from '@nestjs/common';
+import { Module, MiddlewareConsumer, RequestMethod } from '@nestjs/common';
 import { CatsController } from './controller/cats.controller';
 import { CatsService } from './service/cats.service';
 import { catsProviders } from './cats.providers';
@@ -17,6 +17,9 @@ export class CatsModule {
   configure(consumer: MiddlewareConsumer) {
     consumer
       .apply(LoggerMiddleware)
-      .forRoutes('cats');
+      .forRoutes({
+        path: 'cats',
+        method: RequestMethod.ALL
+      });
   }
 }
