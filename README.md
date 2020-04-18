@@ -49,5 +49,5 @@ gpinheiro2001@gmail.com
 ## Stay in touch
 
 - Author - [Gustavo Pinheiro](gustavo.contato)
-- Website - [https://devgp.com.br](https://devgp.com.br)
+- Website - [https://devgp.com.br](http://devgp.com.br)
 - Twitter - [@Gustavo81377105](https://twitter.com/Gustavo81377105)
