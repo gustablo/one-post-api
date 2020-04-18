@@ -7,9 +7,9 @@ import { PostsModule } from './core/posts/posts.module';
 import { ParagraphsModule } from './core/paragraphs/paragraphs.module';
 import { ConfigModule } from '@nestjs/config';
 import { CategoriesModule } from './core/categories/categories.module';
-
+import { UsersModule } from './core/users/users.module';
 @Module({
-  imports: [ConfigModule.forRoot(), DatabaseModule, CatsModule, PostsModule, ParagraphsModule, CategoriesModule],
+  imports: [ConfigModule.forRoot(), DatabaseModule, CatsModule, PostsModule, ParagraphsModule, CategoriesModule, UsersModule],
   controllers: [AppController],
   providers: [AppService],
 })
