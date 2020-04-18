@@ -47,6 +47,11 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+## Create entity
+```bash
+$ npm run create entity_name
+```
+
 ## Test
 
 ```bash
