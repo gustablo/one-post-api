@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { ParagraphsController } from './paragraphs.controller';
-import { ParagraphsService } from './paragraphs.service';
+import { ParagraphsController } from './controller/paragraphs.controller';
+import { ParagraphsService } from './service/paragraphs.service';
 import { DatabaseModule } from '../../database/database.module';
 import { paragraphsProviders } from './paragraphs.providers';
 

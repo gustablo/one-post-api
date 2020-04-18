@@ -1,9 +1,9 @@
 import { Injectable, Inject } from '@nestjs/common';
 import { Model } from 'mongoose';
-import { Post } from '../../interfaces/post.interface';
-import { CreatePostDto } from './dto/create-post.dto';
-import { Category } from 'src/interfaces/category.interface';
-import { CreateCategoryDto } from '../categories/dto/category-create.dto';
+import { Post } from '../interfaces/post.interface';
+import { CreatePostDto } from '../dtos/create-post.dto';
+import { Category } from 'src/core/categories/interfaces/category.interface';
+import { CreateCategoryDto } from '../../categories/dtos/category-create.dto';
 
 @Injectable()
 export class PostsService {
