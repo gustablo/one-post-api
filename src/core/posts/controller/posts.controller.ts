@@ -5,7 +5,7 @@ import { PostsService } from '../service/posts.service';
 
 import { CreatePostDto } from '../dtos/create-post.dto';
 
-import { ValidationPipe } from '../../../shared/validation.pipe';
+import { ValidationPipe } from '../../../shared/validations/validation.pipe';
 
 @ApiTags('posts')
 @Controller('posts')

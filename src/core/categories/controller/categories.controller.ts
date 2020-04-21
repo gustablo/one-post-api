@@ -2,7 +2,7 @@ import { Controller, Post, Get, Param, BadRequestException } from '@nestjs/commo
 import { Category } from 'src/core/categories/interfaces/category.interface';
 import { CategoriesService } from '../service/categories.service';
 import { ApiTags } from '@nestjs/swagger';
-import { existsById } from '../../../shared/exists-id.validation';
+import { existsById } from '../../../shared/validations/exists-id.validation';
 
 @ApiTags('categories')
 @Controller('categories')

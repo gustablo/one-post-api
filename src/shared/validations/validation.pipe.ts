@@ -1,10 +1,14 @@
-import { PipeTransform, Injectable, ArgumentMetadata, BadRequestException } from '@nestjs/common';
-import { validate, ValidationError } from 'class-validator';
-import { plainToClass } from 'class-transformer';
+import {
+  PipeTransform,
+  Injectable,
+  ArgumentMetadata,
+  BadRequestException
+} from "@nestjs/common";
+import { validate, ValidationError } from "class-validator";
+import { plainToClass } from "class-transformer";
 
 @Injectable()
 export class ValidationPipe implements PipeTransform<any> {
-
   async transform(value: any, { metatype }: ArgumentMetadata) {
     if (!metatype || !this.toValidate(metatype)) {
       return value;
@@ -26,7 +30,6 @@ export class ValidationPipe implements PipeTransform<any> {
   }
 
   private joinErrors(errors: ValidationError[]) {
-
     return errors.map(err => {
       if (err.constraints) {
         const keys = Object.keys(err.constraints);
@@ -36,7 +39,6 @@ export class ValidationPipe implements PipeTransform<any> {
         }
       }
       if (err.children) {
-
         const constraints = this.findDeepChildrens(err);
 
         const keys = Object.keys(constraints);
@@ -45,12 +47,10 @@ export class ValidationPipe implements PipeTransform<any> {
           return constraints[key];
         }
       }
-
     });
   }
 
   private findDeepChildrens(error) {
-
     if (!error.children.length) return error.constraints;
 
     return this.findDeepChildrens(error.children[0]);
