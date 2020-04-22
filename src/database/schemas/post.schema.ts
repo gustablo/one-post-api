@@ -1,5 +1,4 @@
 import * as mongoose from 'mongoose';
-import { ParagraphSchema } from './paragraph.schema';
 import { CategorySchema } from './category.schema';
 
 export const PostSchema = new mongoose.Schema({
@@ -22,8 +21,8 @@ export const PostSchema = new mongoose.Schema({
   },
 
   paragraphs: [{
-    type: ParagraphSchema,
-    ref: 'Paragraph',
+    text: String,
+    img: String,  
   }],
 
 });

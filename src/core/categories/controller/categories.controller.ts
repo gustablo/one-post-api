@@ -1,8 +1,9 @@
 import { Controller, Post, Get, Param, BadRequestException } from '@nestjs/common';
-import { Category } from 'src/core/categories/category';
-import { CategoriesService } from '../service/categories.service';
 import { ApiTags } from '@nestjs/swagger';
-import { existsById } from '../../../shared/validations/exists-id.validation';
+
+import { Category } from 'src/core/categories/category';
+
+import { CategoriesService } from 'src/core/categories/service/categories.service';
 
 @ApiTags('categories')
 @Controller('categories')
@@ -19,12 +20,6 @@ export class CategoriesController {
 
   @Get(':id/posts')
   async showPosts(@Param('id') id: string) {
-    const categoryExists = await existsById('Category', id);
-
-    if (!categoryExists)  {
-      throw new BadRequestException('Categoria não econtrada');
-    }
-
     return this.categoryService.showPosts(id);
   }
 

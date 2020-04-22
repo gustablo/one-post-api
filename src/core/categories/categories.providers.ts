@@ -1,5 +1,6 @@
 import { Connection } from 'mongoose';
-import { CategorySchema } from '../../database/schemas/category.schema';
+
+import { CategorySchema } from 'src/database/schemas/category.schema';
 
 export const categoriesProviders = [
   {

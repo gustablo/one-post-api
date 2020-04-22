@@ -1,8 +1,10 @@
-import { CreateParagraphDto } from '../../paragraphs/dtos/create-paragraph.dto';
-import { IsString, IsArray, ValidateNested, IsNotEmpty } from 'class-validator';
-import { Type } from 'class-transformer';
 import { ApiProperty } from '@nestjs/swagger';
-import { CreateCategoryDto } from '../../categories/dtos/category-create.dto';
+
+import { Type } from 'class-transformer';
+import { IsString, IsArray, ValidateNested, IsNotEmpty } from 'class-validator';
+
+import { CreateParagraphDto } from 'src/core/posts/dtos/create-paragraph.dto';
+import { CreateCategoryDto } from 'src/core/categories/dtos/category-create.dto';
 
 export class CreatePostDto {
 

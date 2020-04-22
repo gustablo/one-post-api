@@ -1,9 +1,11 @@
 import { Injectable, Inject } from '@nestjs/common';
+
 import { Model } from 'mongoose';
-import { Post } from '../post';
+
+import { Post } from 'src/core/posts/post';
 import { CreatePostDto } from '../dtos/create-post.dto';
 import { Category } from 'src/core/categories/category';
-import { CreateCategoryDto } from '../../categories/dtos/category-create.dto';
+import { CreateCategoryDto } from 'src/core/categories/dtos/category-create.dto';
 
 @Injectable()
 export class PostsService {
@@ -30,9 +32,7 @@ export class PostsService {
         const createdCategory = new this.categoryModel(category);
         await createdCategory.save();
       }
-
     }
-
   }
 
   async index(): Promise<Post[]> {

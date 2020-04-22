@@ -1,11 +1,11 @@
 import { Controller, Post, Body, Get, Param, UsePipes, Patch } from '@nestjs/common';
 import { ApiBody, ApiTags, ApiParam } from '@nestjs/swagger';
 
-import { PostsService } from '../service/posts.service';
+import { PostsService } from 'src/core/posts/service/posts.service';
 
-import { CreatePostDto } from '../dtos/create-post.dto';
+import { CreatePostDto } from 'src/core/posts/dtos/create-post.dto';
 
-import { ValidationPipe } from '../../../shared/validations/validation.pipe';
+import { ValidationPipe } from 'src/shared/validations/validation.pipe';
 
 @ApiTags('posts')
 @Controller('posts')

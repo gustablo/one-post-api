@@ -1,6 +1,6 @@
 import { Document } from 'mongoose';
-import { Category } from '../categories/category';
-import { Paragraph } from '../paragraphs/paragraphs';
+
+import { Category } from 'src/core/categories/category';
 
 export interface Post extends Document {
 
@@ -9,4 +9,9 @@ export interface Post extends Document {
   readonly paragraphs: Paragraph[];
   readonly categories: Category[];
 
+}
+
+export interface Paragraph {
+  readonly text: String,
+  readonly img: String,
 }

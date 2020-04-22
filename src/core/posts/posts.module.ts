@@ -1,9 +1,13 @@
 import { Module } from '@nestjs/common';
-import { PostsController } from './controller/posts.controller';
-import { PostsService } from './service/posts.service';
-import { DatabaseModule } from '../../database/database.module';
-import { postsProviders } from './posts.providers';
-import { categoriesProviders } from '../categories/categories.providers';
+
+import { DatabaseModule } from 'src/database/database.module';
+
+import { PostsController } from 'src/core/posts/controller/posts.controller';
+
+import { PostsService } from 'src/core/posts/service/posts.service';
+
+import { postsProviders } from 'src/core/posts/posts.providers';
+import { categoriesProviders } from 'src/core/categories/categories.providers';
 
 @Module({
   imports: [DatabaseModule],

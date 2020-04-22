@@ -1,7 +1,9 @@
 import { Injectable, Inject } from '@nestjs/common';
+
 import { Model } from 'mongoose';
-import { Category } from '../category';
-import { Post } from '../../posts/post';
+
+import { Category } from 'src/core/categories/category';
+import { Post } from 'src/core/posts/post';
 
 @Injectable()
 export class CategoriesService {
