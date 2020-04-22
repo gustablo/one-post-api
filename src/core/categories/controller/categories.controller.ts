@@ -1,5 +1,5 @@
 import { Controller, Post, Get, Param, BadRequestException } from '@nestjs/common';
-import { Category } from 'src/core/categories/interfaces/category.interface';
+import { Category } from 'src/core/categories/category';
 import { CategoriesService } from '../service/categories.service';
 import { ApiTags } from '@nestjs/swagger';
 import { existsById } from '../../../shared/validations/exists-id.validation';

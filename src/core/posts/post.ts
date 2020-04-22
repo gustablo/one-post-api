@@ -1,6 +1,6 @@
 import { Document } from 'mongoose';
-import { Category } from '../../categories/interfaces/category.interface';
-import { Paragraph } from '../../paragraphs/interfaces/paragraph.interface';
+import { Category } from '../categories/category';
+import { Paragraph } from '../paragraphs/paragraphs';
 
 export interface Post extends Document {
 

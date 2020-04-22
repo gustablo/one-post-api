@@ -1,8 +1,8 @@
 import { Injectable, Inject } from '@nestjs/common';
 import { Model } from 'mongoose';
-import { Post } from '../interfaces/post.interface';
+import { Post } from '../post';
 import { CreatePostDto } from '../dtos/create-post.dto';
-import { Category } from 'src/core/categories/interfaces/category.interface';
+import { Category } from 'src/core/categories/category';
 import { CreateCategoryDto } from '../../categories/dtos/category-create.dto';
 
 @Injectable()
