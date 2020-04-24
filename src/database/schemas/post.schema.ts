@@ -20,9 +20,6 @@ export const PostSchema = new mongoose.Schema({
     default: 0,
   },
 
-  paragraphs: [{
-    text: String,
-    img: String,  
-  }],
+  text: String,
 
 });
