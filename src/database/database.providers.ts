@@ -9,6 +9,7 @@ export const databaseProviders = [
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,
+        useCreateIndex: true,
         user: process.env.MONGODB_USER,
         pass: process.env.MONGODB_PASS,
       }),
