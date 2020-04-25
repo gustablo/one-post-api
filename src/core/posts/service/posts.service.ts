@@ -39,8 +39,8 @@ export class PostsService {
     return this.postModel.find().sort({ _id: -1 }).exec();
   }
 
-  async show(id: string): Promise<Post> {
-    return this.postModel.findById(id);
+  async show(title: string): Promise<Post> {
+    return this.postModel.findOne({ title }).sort({ _id: -1 }).exec();
   }
 
   async patchLike(id: string): Promise<number> {

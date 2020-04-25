@@ -31,9 +31,9 @@ export class PostsController {
   }
 
   @ApiParam({ name: 'id', type: String })
-  @Get(':id')
-  async show(@Param('id') id: string) {
-    return this.postService.show(id);
+  @Get(':title')
+  async show(@Param('title') title: string) {
+    return this.postService.show(title);
   }
 
   @Patch(':id/likes')

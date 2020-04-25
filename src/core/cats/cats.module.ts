@@ -15,11 +15,11 @@ import { LoggerMiddleware } from '../../middlewares/logger.middleware';
 })
 export class CatsModule {
   configure(consumer: MiddlewareConsumer) {
-    consumer
-      .apply(LoggerMiddleware)
-      .forRoutes({
-        path: 'cats',
-        method: RequestMethod.ALL
-      });
+    // consumer
+    //   .apply(LoggerMiddleware)
+    //   .forRoutes({
+    //     path: 'cats',
+    //     method: RequestMethod.ALL
+    //   });
   }
 }
