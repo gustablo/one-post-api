@@ -5,6 +5,8 @@ export const PostSchema = new mongoose.Schema({
 
   title: String,
 
+  subtitle: String,
+
   createdAt: {
     type: Date,
     default: Date.now(),

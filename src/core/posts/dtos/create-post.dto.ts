@@ -11,6 +11,9 @@ export class CreatePostDto {
   @IsString({ message: 'Título deve ser palavra' })
   title: string;
 
+  @ApiProperty()
+  @IsString()
+  subtitle: string;
 
   @ApiProperty()
   @IsString({ message: 'Texto deve ser palavra' })

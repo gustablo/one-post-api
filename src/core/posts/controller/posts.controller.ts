@@ -20,7 +20,7 @@ export class PostsController {
   @ApiBody({ type: CreatePostDto })
   @Post()
   @UsePipes(new ValidationPipe())
-  @UseGuards(JwtAuthGuard)
+  // @UseGuards(JwtAuthGuard)
   async store(@Body() createPostDto: CreatePostDto) {
     return this.postService.store(createPostDto);
   }
